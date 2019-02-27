@@ -1,0 +1,39 @@
+<article class="post">
+  <div class="row post-heading">
+    <div class="col-xs-10">
+      <a href="/blog/{{p.key().id()}}">
+        <h3 class="post-title text-left">{{p.title | safe}}</h3>
+      </a>
+    </div>
+    <div class="col-xs-2">
+      <h4 class="post-date text-right">{{p.created.strftime("%b %d, %Y")}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="post-author">
+        By {{post_username}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="post-content">
+        {{p._render_text | safe}}
+      </div>
+    </div>
+  </div>
+  <p>Score <span class="badge">{{p.likes}}</span></p>
+  {% if username %}
+    <form method="post">
+      <button type="submit" name="action" value="like" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      </button>
+      <button type="submit" name="action" value="dislike" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+      </button>
+    </form>
+  {% endif %}
+  User: {{username}}
+  Post: {{post_username}}
+</article>

@@ -1,0 +1,92 @@
+<html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:: Welcome To Coupon and Tricks Centre ::</title>
+<link href="/stylesheets/c1.css" rel="stylesheet" type="text/css" >
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body >
+    <div class="logo">
+    
+    <img height="200" width="200" src="../images/adbytelogo_wireframe.svg"/>
+    
+    
+    
+    
+    </div>
+
+<div id="smaatoad" style="padding: 0px"></div>
+<script type="text/javascript" src="http://soma-assets.smaato.net/js/smaatoAdTag.js"></script>
+<script>
+	function callBackForSmaato(status){
+		if(status == "SUCCESS"){
+			console.log('callBack is being called with status : ' + status);
+		} else if (status == "ERROR"){
+			console.log('callBack is being called with status : ' + status);
+		}
+	}; 
+	SomaJS.loadAd({
+		adDivId : "smaatoad",
+		publisherId: 1100006927,
+		adSpaceId: 130073629,
+		dimension: "leader"
+	},callBackForSmaato);
+</script>
+
+<div  style="width:100%;top:100px;position:absolute;height:60px">
+    
+<form action="http://www.google.com" id="cse-search-box">
+  <div style="float:left;margin-top:10px;">
+    <input type="hidden" name="cx" value="partner-pub-7934673545282018:4862720082" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input  style="width:5%;" type="text" name="q" size="25" />
+    <input style="float:left;" type="submit" name="sa" value="Search" />
+  </div>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+<div class="menu">   
+    <a href="../"> <div class="mainmenu firstmenu" >Home</div></a>
+    
+    <a href="../articles"><div class="mainmenu secondmenu">Articles</div></a>
+</div>
+</div>
+
+
+<div class="link-main">
+    
+    {% for l in links %}
+       <a href="../article?id={{l.link}}">
+<div class="link-c">
+    
+ {{l.title}}
+    
+           </div></a>
+{% endfor %}
+
+
+</div>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- articlelist_bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7934673545282018"
+     data-ad-slot="9083352886"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div id="footer">
+  <p style="margin-left:35%;">Copyright &copy; 2016 <a href="http://www.advancedbytes.in">ADVANCEDBYTES.IN| </a>.
+      Powered by <a href="http://www.appengine.google.com">Google App engine</a><br></p>
+     <a rel="nofollow"  style="position:absolute;left:65%;"href="mailto:123arjunsuresh@gmail.com">Contact US</a></small>
+        <p style="margin-left:40%;">Design by <a rel="nofollow" href="http://www.facebook.com/arjunsuresh2012/">Arjun Suresh</a></p>
+
+</div>
+</html>

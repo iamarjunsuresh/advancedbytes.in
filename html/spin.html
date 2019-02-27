@@ -1,0 +1,86 @@
+<style>
+#spin-button{
+	font-family: "Arial Black", Gadget, sans-serif;
+	background-color: #C03;
+	width: 89px;
+	position: absolute;
+	left: 164px;
+	border-radius: 7px;
+	top: 453px;
+	height: 24px;
+}
+
+</style>
+
+
+<script language="javascript">
+
+var looper;
+var degrees = 0;
+var stopa=0;
+var stopdegrees=0;
+var change=1;
+function s()
+{rotateAnimation("spin-image",2);
+	
+	
+	
+	
+	}
+function ajax()
+{
+	
+	variable=new XMLHttpRequest();
+	variable.onreadystatechange=function()
+	{if(variable.status==200&&variable.readyState==4)
+	{
+    	var s=parseInt(variable.responseText);
+		stopdegrees=s*(45)+25;
+		stopa=1;
+		
+		
+		}}
+	
+	variable.open("GET","../spinselect",false);
+	variable.send();}
+
+function rotateAnimation(el,speed){
+	change=1;
+	var elem = document.getElementById(el);
+	if(navigator.userAgent.match("Chrome")){
+		elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("Firefox")){
+		elem.style.MozTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("MSIE")){
+		elem.style.msTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("Opera")){
+		elem.style.OTransform = "rotate("+degrees+"deg)";
+	} else {
+		elem.style.transform = "rotate("+degrees+"deg)";
+	}
+	
+	if(stopa==1)
+	{if(stopdegrees==degrees)
+	{return;
+	}}
+	degrees+=change;
+	if(degrees > 359){
+		degrees = 1;
+		ajax();
+	}
+	looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+}
+
+
+</script>
+
+
+<div ><img  onclick="s();" id="spin-image" src="../images/spin.png" /><img style="position: absolute; left: 380px; top: 173px;"src="../images/lent.png" />
+<div onClick="s();" id="spin-button">Spin
+  
+  
+  
+  
+</div>
+
+</div>

@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+:root{
+	
+var-topsidebar:500px;	
+}
+
+#dd{
+	position: absolute;
+	width: 811px;
+	height: 707px;
+	top: 271px;
+	left: 314px;
+	
+}
+a{
+	text-decoration:none;
+	background-color:#930;
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {background-color:#990000;;}
+    to {background-color:white;}
+}
+#sidebar{
+	position: absolute;
+	left: 25px;
+	width: 210px;
+	height: 30px;
+	color:black;
+
+	top: 20px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: blink;
+	background-color:orange;
+	font-family: 'Supermercado One', san-serif;
+}
+#sidebar:hover{
+	
+	-webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    animation-name: example;
+	
+    animation-duration: 2s;
+	animation-iteration-count:infinite;
+
+	}
+#hoverbar{
+	position: absolute;
+	width: 100%;
+	height: 193px;
+	left: 15px;
+	top: 28px;
+	    background: -webkit-linear-gradient(orange, red); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(orange, red); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(orange, red); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(orange, red); /* Standard syntax (must be last) */
+	
+}
+#sd
+{
+	position: absolute;
+	
+}

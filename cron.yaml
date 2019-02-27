@@ -1,0 +1,5 @@
+cron:
+- description: lot taking
+  url: /selectlotwinner
+  schedule: every day 21:00
+  timezone: Asia/Kolkata

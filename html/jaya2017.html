@@ -1,0 +1,82 @@
+<html>
+<head>
+<style>
+
+#photo{
+position:absolute;
+display:block;
+}
+#nohide{
+display:block;
+
+}
+h1{
+
+position:absolute;
+left:30%;
+}
+img{
+
+
+width:60%;
+height:auto;
+}
+
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../scripts/jquery.countdown.js"></script>
+<script type="text/javascript">
+
+
+
+
+
+function load(){
+//$('div#clock').countdown("2017/01/26").on('finish.countdown', show_photos);
+show_photos();
+}
+function show_photos(){
+
+$('div#photo').each(function(i,ele){
+console.log(ele);
+var skew=Math.random()*2*30-30;
+var posx=30+(Math.cos(i*45)*30);
+var posy=30+(Math.sin(i*45)*30);
+var photo=$(this);
+console.log(photo);
+photo.animate({opacity:"1",transform:"rotateX("+skew+"deg)",marginLeft:posx+"%",marginTop:posy+"%"},3040);
+
+
+});
+
+
+
+
+
+}
+$(document).ready(load);
+</script>
+</head>
+<body>
+<div style="clock" id="clock"></div>
+
+<h1>Happy Birthday Jayalakshmi !!!</h1>
+<div class="photos">
+
+<div class="photo" id="photo" ><img src="../images/jaya/jaya1.jpg"></img></div>
+<div class="photo" id="photo"><img src="../images/jaya/jaya2.jpg"></img></div>
+
+<div class="photo" id="photo"><img src="../images/jaya/jaya4.jpg"></img></div>
+<div class="photo" id="photo"><img src="../images/jaya/jaya5.jpg"></img></div>
+<div class="photo" id="photo"><img src="../images/jaya/jaya6.jpg"></img></div>
+<div class="photo" id="photo"><img src="../images/jaya/jaya7.jpg"></img></div>
+<div class="photo" id="photo"><img src="../images/jaya/jaya8.jpg"></img></div>
+
+</div>
+
+
+
+</body>
+<html>

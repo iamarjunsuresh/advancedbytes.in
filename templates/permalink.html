@@ -1,0 +1,91 @@
+{% extends "front.html" %}
+
+{% block content %}
+  <article class="post">
+    <div class="row post-heading">
+      <div class="col-xs-8">
+        <h3 class="post-title text-left">{{post.title | safe}}</h3>
+      </div>
+      <div class="col-xs-4">
+        <h4 class="post-date text-right">{{post.created.strftime("%b %d, %Y")}}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="post-author">
+          By {{post_username}}
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="text-right like-area">
+        <span>views:{{post.views}}</span>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="post-content">
+          {{post._render_text | safe}}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="row">
+
+    {% if username == post_username %}
+      <form method="post" class="post-control">
+        <button type="button" name="edit" class="btn btn-default" data-toggle="modal" href="#edit">
+          Edit Post
+        </button>
+        <button type="submit" name="action" value="delete" class="btn btn-danger" onclick="return confirmDelete()">
+          Delete Post
+        </button>
+      </form>
+    {% endif %}
+  </div>
+
+  <div class="modal fade" id="edit" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">×</button>
+          <h3 class="modal-title">Edit Post</h3>
+        </div>
+        <div class="modal-body">
+          <form method="post">
+            <div class="form-group row">
+              <label for="title" class="col-xs-2 col-form-label">Title</label>
+              <div class="col-xs-10">
+                <input class="form-control" type="text" value="{{post.title | safe}}" name="title" id="title" placeholder="Title" required>
+              </div>
+            </div>
+            <div class="form-group row">ent</label>
+              <div class="col-xs-10">
+                <textarea class="form-control" name="content" id="content" rows="15" placeholder="Content (HTML/Text)" required>{{post.content | safe}}</textarea>
+              </div>
+            </div>
+            <div class="error">{{error}}</div>
+            <button type="submit" class="btn btn-primary" name="action" value="edit">Edit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="https://apis.google.com/js/plusone.js"></script>
+<div id="comments"></div>
+<script>
+gapi.comments.render('comments', {
+    href: window.location,
+    width: '624',
+    first_party_property: 'BLOGGER',
+    view_type: 'FILTERED_POSTMOD'
+});
+</script>
+ 
+
+  
+
+
+{% endblock %}
+

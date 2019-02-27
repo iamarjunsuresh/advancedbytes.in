@@ -1,0 +1,25 @@
+
+<script language="JavaScript">
+
+</script>
+<div style="-webkit-box-shadow: inset 20px 20px 72px -14px #cc9377;
+-moz-box-shadow: inset 20px 20px 72px -14px #CC0000;
+box-shadow: inset 20px 20px 72px -14px #CC0000;"><label style="font-family: Electrolize;font-size:39px">your wallet is</label></div> 
+<div style=" -webkit-box-shadow: inset 20px 20px 72px -14px #CC0000;
+-moz-box-shadow: inset 20px 20px 72px -14px #CC0000;
+box-shadow: inset 20px 20px 72px -14px #CC0000;"><label style="font-family: Electrolize;font-size:39px">Rs {{mosn}}</label>
+</div>
+<div>
+<div style="font-family: Electrolize;font-size:23px">Money Earnings Note</div>
+<ul>
+{% for user in users %}
+  <li><div style="background-color: #ff4469">{{ user.desc }}-----{{user.date}}--{{user.mon}}</div></li>
+{% endfor %}
+
+
+</ul>
+
+
+
+
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sign up</title>
+<link href="../stylesheets/c1.css" rel="stylesheet" type="text/css">
+
+<link href='http://fonts.googleapis.com/css?family=Dosis:400,700,300|Sarpanch' rel='stylesheet' type='text/css'>
+
+</head>
+<img  style="margin-left:65px" src="/images/sitelogo.jpg" />
+
+<a href="../">
+<div id="rectangle"  style="margin-left: 100px;" >
+  <label id="labheaders"   >
+ Home
+ </label>
+</div>
+</a>
+
+<a href="../register">
+<div id="rectangle" style="margin-left: 251px" >
+ <label id="labheaders" >
+  SignUp
+ </label>
+</div>
+</a>
+<a href="../sign">
+<div id="rectangle" style="margin-left:402px">
+  <label align="center" id="labheaders">SignIN</label>
+</div>
+</a>
+<div id="error" style="color: #F00; left: 297px; position: absolute; top: 300px; width: 700px;">Error in datum </div>
+<form action="/signup" method="post" style="width: 472px; height: 480px; position: absolute; left: 278px; top: 323px; font-family: 'Dosis', sans-serif; font-size: 24px; color: #000;" enctype="application/x-www-form-urlencoded">
+ 
+
+  <label for="nuser" style="position:absolute;left:10%">Name:</label>
+     <input type="text" style="position:absolute;left:60%" name="nuser" id="nuser">
+    
+     <label for="email" style="position:absolute;top:10%;left:10%" >Email Id:</label>
+     <input type="text" style="position:absolute;top:10%;left:60%" name="email" id="email">
+     <label style="position:absolute;top:20%;left:10%">Mobile No:</label>
+     <input style="position:absolute;top:20%;left:60%" type="text" name="mob" id="mob"/>
+  <label style="position:absolute;top:30%;left:10%">Password:</label>
+  <input name="password" style="position:absolute;top:30%;left:60%" type="password" value="">
+ <label style="position:absolute;top:40%;left:10%">confirm Password:</label>
+<input name="word"     style="position: absolute; top: 40%; left: 60%; width: 20;"type="password" value="">
+<input style="position: absolute; left: 169px; top: 286px; height: 33px; width: 149px;"type="submit"/>
+</form>
+</html>

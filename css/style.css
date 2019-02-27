@@ -1,0 +1,157 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+
+/* Header */
+.name {
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing:3px;
+  margin: 10px 15px 0 10px;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-color: #59c;
+}
+
+
+/* Navigation */
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-default {
+    background-color: #fff;
+}
+
+.navbar-collapse {
+    padding-left: 0;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>li>a,
+.navbar-toggle {
+    color: #191919;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #eee;
+}
+
+.nav>li>a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/* Main Content Size, Padding, Margins */
+body {
+    font-size: 16px;
+    font-family: 'PT Serif', serif;
+    font-weight: 300;
+    /*color: #eee;*/
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article {
+  padding: 0 10px;
+}
+
+.format-main {
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 50px;
+  /*background-color: #191919;*/
+}
+
+.content {
+  padding: 20px;
+}
+
+.modal-img {
+  margin-bottom: 15px;
+}
+
+.project-summary {
+  padding-top: 15px;
+  text-align: left;
+}
+
+.pad-bottom {
+  padding-bottom: 30px;
+}
+
+.post-date {
+  margin-top: 20px;
+}
+
+.post-heading {
+  border-bottom: 3px solid;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.post-title,
+.post-date {
+  margin-bottom: 0;
+}
+
+.post-date {
+  margin-top: 25px;
+}
+
+.post-content {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.post-control {
+  margin: 25px 0;
+}
+
+.post-overview {
+  max-height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-overview .read-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  /* "transparent" only works here because == rgba(0,0,0,0) */
+  background-image: linear-gradient(to bottom, transparent, white);
+}
+
+
+/* Typography */
+.like-area {
+  font-size: 18px;
+}
+
+.post-author {
+  font-weight: bold;
+}
+
+
+/* Tables */
+th {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 500px) {
+  .name {
+    font-size: 24px;
+    margin: 15px 10px 0 5px;
+  }
+}

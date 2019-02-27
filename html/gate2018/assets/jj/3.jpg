@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Error page</title>
+
+<link rel="stylesheet" type="text/css"  href="/error_pages/css/main.css"  />
+<!--[if lt IE 7]>
+<script type="text/javascript" src="/error_pages/js/jquery.min.js"></script>
+<script type="text/javascript" src="/error_pages/js/jquery.pngFix.pack.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).pngFix();
+	});
+</script>
+
+<style>
+	body, #wrapper {height: 100%;}
+</style>
+<![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+  <div id="minwidth">
+    <div id="header">
+      <div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+      <td>  <img src="/error_pages/images/ion_header.gif"/></td>
+      <td align="center">&nbsp;</td>
+      <td><img src="/error_pages/images/tata_logo.png" class="header_tata_logo" align="absmiddle"/> </td>
+    </tr>
+    </table>
+   </div>
+    </div>
+   
+    <div class="pagecontainer">
+   	  <div class="error_alert_container">
+        	<div>
+            	<div class="alert_image"><img src="/error_pages/images/alert_icon.gif"/></div>
+            	<div class="alert_msg">Sorry for the inconvenience.</div>
+        	</div>
+            <div class="alert_msg_description">
+     		 We are unable to service your request at this time.Kindly try accessing the page after some time.</div>
+      </div>
+      
+     
+      
+       	<div class="assistance_container">
+        <div class="min_height_div"></div>
+        	<div class="assistance_title">For any other assistance,</div>
+            <div class="assistance_options_container">
+            	<div class="assistance_options">
+                	<div class="assistance_options_image"><img src="/error_pages/images/ico_call.gif"/></div>
+                    <div class="assistance_options_description">
+                    	<p>Call</p>
+                    	<p class="contact_number">18002096030 <span class="toll_free">(India Toll Free)</span></p>
+                    </div>
+                </div>
+                <div class="assistance_options">
+                	<div class="assistance_options_image"><img src="/error_pages/images/ico_ask.gif" class="img_position"/></div>
+                    <div class="assistance_options_description">
+                    	<p>Ask a Question</p>
+                    	<p class="contact_number">Ask iON<br/> <span class="toll_free">(Accessible through www.tcsion.com)</span></p>
+                    </div>
+                </div>
+                <div class="assistance_options">
+                	<div class="assistance_options_image"><img src="/error_pages/images/ico_email.gif" class="img_position_Email"/></div>
+                    <div class="assistance_options_description">
+                    	<p>E-mail</p>
+                    	<p class="contact_number">iON.ServiceDesk@tcs.com</p>
+                    </div>
+                </div>
+                <div class="assistance_options">
+                	<div class="assistance_options_image"><img src="/error_pages/images/ico_chat.gif" class="img_position"/></div>
+                    <div class="assistance_options_description">
+                    	<p>Online Chat</p>
+                    	<p class="contact_number">Talk to iON <br/><span class="toll_free">(Accessible through the Webtop)</span></p>
+                    </div>
+                </div>
+                <div class="assistance_options">
+                	<div class="assistance_options_image"><img src="/error_pages/images/ico_sms.gif"/></div>
+                    <div class="assistance_options_description">
+                    	<p>SMS</p>
+                    	<p class="contact_number">"iON"  to 56767</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="error_code" >Error Code: 404</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+ <div id="footer">
+ <table border="0" cellspacing="0" cellpadding="0" width="100%" height="44">
+  <tr>
+   <td width="10">&nbsp;</td>
+   <td width="140" height="41"><span class="examples"><img src="/error_pages/images/tcs_logo.png" width="140" height="24" /></span></td>
+   <td align="center" ><span class="copyright_footer">Copyright &copy; 2011 Tata Consultancy Services | <a href="#nogo">Terms of Use</a> | <a href="#nogo">Privacy Policy</a> | Version 2.3</span></td>
+   <td width="140" align="right"  height="44"><span class="examples"><img src="/error_pages/images/tata_logo.png" width="28" height="24" /></span></td>
+   <td width="10">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+</div>
+</body>
+</html>

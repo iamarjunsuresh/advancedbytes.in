@@ -1,0 +1,61 @@
+<html>
+<title>Critho Game ::Version 2 </title>
+
+
+<body>
+<style>
+
+.vid{
+
+display:none;
+}
+
+</style>
+
+<script>
+
+function pdd()
+{
+
+//document.getElementById("ghostvideo").currentTime=14;
+document.getElementById("ghost").classList.remove("vid");
+document.getElementById("fake").classList.add("vid");
+document.getElementById("radios").classList.add("vid");
+
+document.getElementById("ghostvideo").play();
+}
+
+</script>
+
+
+
+
+<h2 style="position:absolute;left:40%"> CRITHO GAME </h2>
+<h5 style="position:absolute;top:15%;left:45%;"> VERSION 2</h5>
+
+<div class="vid" style="position:absolute;left:20%;top:20%;"  id="ghost">
+
+
+ <video id="ghostvideo" preload="auto" width="640" height="480" >
+
+  <source src="images/out.mp4" type="video/mp4">
+Your browser does not support the video tag. Play in PC
+</video> 
+
+
+</div>
+
+
+<div id="radios" style="position:absolute;top:30%;left:40%;" >
+
+
+<input style="top:25%;left:40%;" type="radio" name="male" onclick="pdd();">Male<br>
+
+<input style="top:30%;left:40%;" type="radio" name="male"  onclick="pdd();">Female
+
+</div>
+<input id="fake" style="position:absolute;top:40%;width:350px;height:150px;left:40%;" type="button" value="Play NOW" onclick="pr();"/>
+
+</body>
+
+</html>

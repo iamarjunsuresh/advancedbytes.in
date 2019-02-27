@@ -1,0 +1,151 @@
+<html>
+<head>
+<style>
+
+#photo{
+position:absolute;
+display:block;
+}
+#nohide{
+display:block;
+
+}
+
+h1{
+
+position:absolute;
+}
+.tab{
+ width:100%;
+left:20%;
+
+
+}
+table{
+width:100%;
+}
+
+left:30%;
+}
+img{
+
+
+width:60%;
+height:auto;
+}
+
+h4{
+
+width:80%;
+left:10%;
+position:relative;
+text-align:center;
+}
+.plot{
+margin:10%;
+padding:7px; border:#4e95f4 2px solid;
+}
+
+	.TFtable{
+		width:80%;
+position:relative;
+		left:10%; 
+		border-collapse:collapse; 
+		text-align:center;
+	}
+	.TFtable td,th	{ 
+		padding:7px; border:#4e95f4 1px solid;
+	}
+	/* provide some minimal visual accomodation for IE8 and below */
+	.TFtable tr{
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the ODD background rows  */
+	.TFtable tr:nth-child(odd){ 
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the EVEN background rows  */
+	.TFtable tr:nth-child(even){
+		background: #dae5f4;
+	}
+
+
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../scripts/jquery.countdown.js"></script>
+<script type="text/javascript"></script>
+
+<body>
+<div class="tab">
+<h4><u>Comparison between brute force and parameterized algorithm</u></h4>
+<table class="TFtable" id="table">
+
+<tr>
+
+<th> Number of vertices (n) </th>
+<th> K</th>
+<th> T(n,k) Parameterized </th>
+
+<th> T(n,k) Brute Force </th>
+</tr>
+</table>
+<div>
+<div class="plot">
+	PLOT OF DATA
+	<iframe style="width:70%;height:60%;" frameborder="0" scrolling="no" src="//plot.ly/~letsctheworld300/1.embed"></iframe>
+</div>
+</body>
+
+<script>
+//var x,y,z,xb,yb,zb;
+x =[48,49,34,70,57,67,37,74,101,53,67,410,36,40,62,113,118,66,129,191,49,111];
+y =[6,7,7,8,7,8,8,8,9,10,11,11,17,19,19,16,18,21,17,18,27,29];
+z =[0.01207,0.65258,0.020480,0.125775,0.043857,0.133807,0.011479,0.010459,0.007117,0.923705,0.040224,2.5597,3.982264,17.765706,156.336521,792.384,578.5320,172.346,121.412,136.720,320.871,1219.241];
+zb=[27.41,49.36,5.70,5215,172.6,3350.37,69.981,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+
+for(i=0;i<x.length;i++)
+{
+
+var tr = document.createElement("tr");
+ td=document.createElement("td");
+
+ node = document.createTextNode(""+x[i]);
+td.appendChild(node);
+tr.appendChild(td);
+
+ node = document.createTextNode(""+y[i]);
+td=document.createElement("td");
+
+td.appendChild(node);
+tr.appendChild(td);
+
+td=document.createElement("td");
+
+ node = document.createTextNode(""+z[i]);
+td.appendChild(node);
+
+tr.appendChild(td);
+
+
+td=document.createElement("td");
+if(zb[i]){
+node = document.createTextNode(""+zb[i]);
+ 
+}
+else{
+
+node = document.createTextNode("-");
+}
+td.appendChild(node);
+
+tr.appendChild(td);
+document.getElementById("table").appendChild(tr);
+}
+
+</script>
+
+
+<html>

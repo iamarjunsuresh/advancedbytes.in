@@ -1,0 +1,59 @@
+<html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SinkleCurd</title>
+<link href="/stylesheets/c1.css" rel="stylesheet" type="text/css" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<style>
+.content:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  
+  display: block;
+  background-image: url('http://www.sinklecurd.asia/images/stripes.png');
+  width: 1200px;
+  height: 800px;
+  
+
+}
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+</style>
+<div class="content">
+  <img style="position: absolute; left: 14px; top: 69px;"src="/images/logo_wireframe.svg" width="100" height="100"/>
+  <div class="incircletext" style="position: absolute; left: 139px; top: 96px;">Leadersboard</div>
+<div class="abpos" style="position: absolute; left: 125px; top: 126px;">Rank</div>
+<div class="abpos" style="position: absolute; left: 178px; top: 129px;">Name</div>
+<div class="abpos" style="position: absolute; left: 233px; top: 128px;">Points</div>
+<div id="cont" class="incircletext" style="position: absolute; left: 143px; top: 157px;">
+
+
+{% for ls in l %}
+<div style="l-name">{{ls.rank}}&nbsp;&nbsp;&nbsp;&nbsp;{{ ls.name}}&nbsp;&nbsp;&nbsp;&nbsp;{{ls.points}}</div></li>
+{% endfor %}
+</div>
+
+
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+</html>

@@ -1,0 +1,115 @@
+<html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:: Welcome To Coupon and Tricks Centre ::</title>
+<link href="/stylesheets/c1.css" rel="stylesheet" type="text/css" >
+
+<link href='https://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="background-image:url(../images/quiz.jpg);
+	background-repeat:repeat;">
+
+
+<div id="smaatoad" style="padding: 0px"></div>
+<script type="text/javascript" src="http://soma-assets.smaato.net/js/smaatoAdTag.js"></script>
+<script>
+	function callBackForSmaato(status){
+		if(status == "SUCCESS"){
+			console.log('callBack is being called with status : ' + status);
+		} else if (status == "ERROR"){
+			console.log('callBack is being called with status : ' + status);
+		}
+	}; 
+	SomaJS.loadAd({
+		adDivId : "smaatoad",
+		publisherId: 1100006927,
+		adSpaceId: 130072247,
+		format: "vast",
+		formatstrict: true,
+		dimension: "xxlarge"
+	},callBackForSmaato);
+</script>
+<div id="smaatoad" style="padding: 0px"></div>
+<script type="text/javascript" src="http://soma-assets.smaato.net/js/smaatoAdTag.js"></script>
+<script>
+	function callBackForSmaato(status){
+		if(status == "SUCCESS"){
+			console.log('callBack is being called with status : ' + status);
+		} else if (status == "ERROR"){
+			console.log('callBack is being called with status : ' + status);
+		}
+	}; 
+	SomaJS.loadAd({
+		adDivId : "smaatoad",
+		publisherId: 1100006927,
+		adSpaceId: 130029869,
+		dimension: "small"
+	},callBackForSmaato);
+</script>
+<!-- PopAds.net Popunder Code for websiterunner-1076.appspot.com -->
+<script type="text/javascript">
+  var _pop = _pop || [];
+  _pop.push(['siteId', 1015737]);
+  _pop.push(['minBid', 0.000000]);
+  _pop.push(['popundersPerIP', 0]);
+  _pop.push(['delayBetween', 0]);
+  _pop.push(['default', false]);
+  _pop.push(['defaultPerDay', 0]);
+  _pop.push(['topmostLayer', false]);
+  (function() {
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    var s = document.getElementsByTagName('script')[0]; 
+    pa.src = '//c1.popads.net/pop.js';
+    pa.onerror = function() {
+      var sa = document.createElement('script'); sa.type = 'text/javascript'; sa.async = true;
+      sa.src = '//c2.popads.net/pop.js';
+      s.parentNode.insertBefore(sa, s);
+    };
+    s.parentNode.insertBefore(pa, s);
+  })();
+</script>
+<!-- PopAds.net Popunder Code End -->
+
+<div  style="width:100%;top:100px;position:absolute;height:60px">
+    
+<form action="http://www.google.com" id="cse-search-box">
+  <div style="float:left;margin-top:10px;">
+    <input type="hidden" name="cx" value="partner-pub-7934673545282018:4862720082" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input  style="width:5%;" type="text" name="q" size="25" />
+    <input style="float:left;" type="submit" name="sa" value="Search" />
+  </div>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+<div class="menu">   
+    <div class="mainmenu firstmenu" >Home</div>
+    
+    <div class="mainmenu secondmenu">Articles</div>
+</div>
+</div>
+
+
+<div class="post-main">
+    
+  <div  class="post-line"><u>
+             {{post.heading}}</u>
+         </div>
+<div class="post-c">
+     
+<div class="post-one">{{post.entry}}  
+    
+    
+    </div>
+    </div>
+   
+ 
+
+
+
+</div>
+
+</html>

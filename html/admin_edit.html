@@ -1,0 +1,72 @@
+<html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>:: Welcome To Coupon and Tricks Centre ::</title>
+<link href="/stylesheets/c1.css" rel="stylesheet" type="text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" language="JavaScript"></script>
+<link href='https://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<script src="scripts/admin.js" language="JavaScript"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div class="logo">
+
+    <img height="200" width="200" src="../images/adbytelogo_wireframe.svg"/>
+
+
+</div>
+
+</div>
+
+{% for item in posts %}
+<div class="post-edit-main">
+
+    <div class="post-edit-c" style="position: relative;left:40%;display: inline-block;">
+
+<input type="hidden" id="edit_date{{item.ind}}" value="{{item.dat}}">
+    <input type="text" oninput="fun({{item.ind}})" id="edit1{{item.ind}}" value="{{item.title}}">
+    <textarea oninput="fun({{item.ind}})" id="edit2{{item.ind}}" rows="4" cols="50">
+{{item.content}}
+</textarea>
+
+<input onclick="fun2({{item.ind}});" type="submit"/>
+
+
+
+
+    </div>
+
+
+    <div class="post-main" style="display: inline-block;">
+
+        <div class="post-line" id="headline{{item.ind}}">
+            {{item.title}}
+        </div>
+        <div contenteditable="true" id="content{{item.ind}}" class="post-c">
+
+            <div class="post-one">{{item.content}}
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{% endfor %}
+
+
+    <p style="margin-left:35%;">Copyright &copy; 2016 <a href="http://www.advancedbytes.in">ADVANCEDBYTES.IN| </a>.
+        Powered by <a href="http://www.appengine.google.com">Google App engine</a><br></p>
+    <a rel="nofollow" style="position:absolute;left:65%;" href="mailto:123arjunsuresh@gmail.com">Contact US</a></small>
+    <p style="margin-left:40%;">Design by <a rel="nofollow" href="http://www.facebook.com/arjunsuresh2012/">Arjun
+        Suresh</a></p>
+
+</div>
+</html>

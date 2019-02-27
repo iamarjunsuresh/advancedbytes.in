@@ -1,0 +1,38 @@
+application: websiterunner-1076 
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: no
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /images
+  static_dir: images
+- url: /downloads
+  static_dir: downloads
+- url: /scripts
+  static_dir: scripts
+- url: /css
+  static_dir: css
+
+- url: /gate2018assets
+  static_dir: html/gate2018/assets
+
+- url: /js
+  static_dir: js
+
+- url: /images/screenshots
+  static_dir: images/screenshots
+- url: /blog/.*
+  script: blog.app
+- url: /app/balance/.*
+  script: balance.app
+- url: /app/.*
+  script: unjumbleme.app
+- url: /.*
+  script: mydream.app
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

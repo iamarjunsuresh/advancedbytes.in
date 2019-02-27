@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style>
+
+</style>
+<title>Privacy Corner</title>
+<body>
+<div> Mouse POinter of Online User is displayed Here</div>
+<div id="contentdiv">
+
+
+
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script language="javascript">
+var xx=0;
+var x=0;y=0;
+function adimage(i,x,y)
+{var img = new Image();
+var div = document.getElementById('contentdiv');
+img.id=i;
+img.width="25";
+img.height="25";
+
+img.onload = function() {
+  div.appendChild(img);
+  
+  
+};
+
+img.src = '../images/pointer31.png';
+
+
+	}
+$(document).ready(
+	
+	
+	function ab(){ 
+					$.ajax({url:"../mousehandle",success: function(data){	
+					s=JSON.parse(data);
+					for(var i=0;i<s.length;i++)
+					{ 
+					updateimage(i,s[i].x,s[i].y);}
+	
+					}});
+	function sendxy()
+	{$.ajax({type:"POST",url:"../mousehandle",data:{'X':x,'Y':y}});
+		
+		
+		}
+setTimeout(sendxy,1500);
+	setTimeout(ab,2300);				
+	});
+$(document).mousemove(function(e) {
+    x=e.screenX;
+	y=e.screenY;
+});
+
+
+function updateimage(p,x,y)
+{
+	if($('#'+p).length==0)
+	{ adimage(p,x,y);}
+
+$('#'+p).css({'position':'absolute'});//,'left':x+'px','top':y+'px'});
+$('#'+p).animate({'left':x+'px','top':y+'px'},500,'linear');
+}
+	
+
+</script
+></body>
+</html>

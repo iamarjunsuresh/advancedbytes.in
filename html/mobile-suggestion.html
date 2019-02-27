@@ -1,0 +1,36 @@
+{% extends 'html/homepage-mobile.html' %}}
+
+{% block content %}
+<p> Specify your concerns and sugggestion through the form provided below:</p>
+<p>Thank You for your feedback!</p>
+ <div class="row">
+    <form action="" method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Title" id="fb_title" name="fb_title" type="text" class="validate">
+          <label for="fb_title" >Title</label>
+
+        </div>
+          </div>
+<div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Title" id="fb_email" name="fb_title" type="text" class="validate">
+          <label for="fb_email" >Email id (Optional)</label>
+
+        </div>
+          </div>
+        <div clas="row">
+        <div class="input-field col s6">
+      <textarea id="fb_feed" name="fb_feed" class="materialize-textarea"></textarea>
+          <label for="fb_feed">FeedBack </label>
+        </div>
+
+      </div>
+        <div clas="row">
+
+            <input type="submit" value="Submit"/>
+
+        </div>
+    </form>
+  </div>
+{% endblock %}
