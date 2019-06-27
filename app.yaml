@@ -1,9 +1,12 @@
-application: websiterunner-1076 
+application: websiterunner-1076
 version: 2
 runtime: python27
 api_version: 1
 threadsafe: no
 handlers:
+- url: /ads\.txt
+  static_files: ads.txt
+  upload: ads\.txt
 - url: /stylesheets
   static_dir: stylesheets
 - url: /images

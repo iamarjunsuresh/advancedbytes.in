@@ -24,10 +24,16 @@ import re
 from google.appengine.api import mail
 from google.appengine.api.mail import EmailMessage
 import pyjade;
+import json
 
 
 class somedata(ndb.Model):
     data=ndb.StringProperty()
+class pointerxy(ndb.Model):
+    ip=ndb.StringProperty()
+    date=ndb.DateTimeProperty(auto_now_add=True)
+    x=ndb.IntegerProperty()
+    y=ndb.IntegerProperty()
 class gatescore(ndb.Model):
     rollno=ndb.StringProperty()
     branch=ndb.StringProperty()
@@ -68,9 +74,9 @@ def getusermessage():
 	for i in range(0,len(mes)):
 		messtr=messtr+mes[i].message+"</br>"
 	messtr='<span style="color:red;">'+ messtr+'</span>'
-	
+
 	return messtr
-	
+
 
 class homepage(webapp2.RequestHandler):
     def get(self):
@@ -81,7 +87,7 @@ class homepage(webapp2.RequestHandler):
         else:
             temp = JINJA_ENVIRONMENT.get_template('html/mobile-home.html')
             self.response.write(temp.render())
-'''      
+'''
 	 #upload_post("sample", "good morning",'1')
         temp=JINJA_ENVIRONMENT.get_template('html/homepage.html')
         articlearray=articles.query().order(-articles.date).fetch(10);
@@ -94,8 +100,8 @@ class homepage(webapp2.RequestHandler):
                 #stri=stri[:500]
                 dict_obj=dict(heading=articlearray[i].title,entry=stri,link=articlearray[i].link)
                 template_values.append(dict_obj)
-                
-             
+
+
         self.response.write(temp.render(posts=template_values))
 '''
 def render_jade(kk,content):
@@ -107,12 +113,12 @@ class addmessageclass(webapp2.RequestHandler):
 		messnode=messagetouser()
 		messnode.message=mestr
 		messnode.put()
-		
+
 class sendmail(webapp2.RequestHandler):
     def get(self):
 	em=EmailMessage(sender='Admin<'+self.request.get('semail')+'>',to="User<"+self.request.get('remail')+">",        subject=self.request.get('sub'),html=self.request.get('body'))
 	em.send()
-        
+
 class listpage(webapp2.RequestHandler):
     def get(self):
         #upload_post("sample", "good morning",'1')
@@ -125,8 +131,8 @@ class listpage(webapp2.RequestHandler):
             for i in range(0,len(articlearray)):
                 dict_obj=dict(link=articlearray[i].link,title=articlearray[i].title)
                 template_values.append(dict_obj)
-                
-             
+
+
         self.response.write(temp.render(links=template_values))
 
 class articlepage(webapp2.RequestHandler):
@@ -144,12 +150,12 @@ class admin(webapp2.RequestHandler):
     def get(self):
         id=self.request.get('id')
         temp=JINJA_ENVIRONMENT.get_template('html/admin.html')
-        self.response.write(temp.render()) 
+        self.response.write(temp.render())
     def post(self):
     	if(self.request.get('user')=='arjun' and self.request.get('password')=="trilon258"):
     	    template=JINJA_ENVIRONMENT.get_template('html/admin_edit.html')
     	    response=urllib2.urlopen("http://www.yashveer.heck.in/rss.xml")
-    	   
+
     	    xml=ET.fromstring(response.read())
     	    items = []
             for i in range(4,13):
@@ -235,12 +241,12 @@ class crithothegame(webapp2.RequestHandler):
     def get(self):
     	html=open("html/crithogame.html")
     	self.response.write(html.read())
-    	
+
 class plotscatter(webapp2.RequestHandler):
     def get(self):
     	html=open("html/plot.html")
     	self.response.write(html.read())
-    	
+
 class admin_edit(webapp2.RequestHandler):
     def post(self):
         title=self.request.get('title')
@@ -261,16 +267,45 @@ class geturl(webapp2.RequestHandler):
     def get(self):
 	import urllib2
 	response = urllib2.urlopen(self.request.get('url'))
-	html = response.read()  
-	self.response.write(html)	
+	html = response.read()
+	self.response.write(html)
 class gate2018(webapp2.RequestHandler):
     def get(self):
 		self.response.headers['Access-Control-Allow-Origin'] = '*'
 		self.response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
 		self.response.headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE'
 		html=open("html/gate2018/index.php")
-    		self.response.write(html.read())    
-    
+    		self.response.write(html.read())
+class pointerclass(webapp2.RequestHandler):
+    def get(self):
+        html=open("html/pointer.html")
+        self.response.write(html.read())
+
+
+class pointerapiclass(webapp2.RequestHandler):
+    def get(self):
+        if self.request.get('get')=="true":
+            res=[{"x":zz.x,"y":zz.y} for zz in pointerxy.query().fetch()]
+            #res=[x;x.date=str(x.date) for x in res]
+            self.response.write(json.dumps(res))
+        else:
+            x=self.request.get('x')
+            y=self.request.get('y')
+            prevrec=pointerxy.query(pointerxy.ip==self.request.remote_addr).fetch()
+            if(len(prevrec)==0):
+                pn=pointerxy()
+                pn.x=int(x)
+                pn.y=int(y)
+                pn.ip=self.request.remote_addr
+                pn.put()
+            else:
+                prevrec[0].x=int(x)
+                prevrec[0].y=int(y)
+                prevrec[0].put()
+
+class adtxt(webapp2.RequestHandler):
+    def get(self):
+        self.response.write("google.com, pub-7934673545282018, DIRECT, f08c47fec0942fa0")
 class gate2018logmarks(webapp2.RequestHandler):
 	def post(self):
 		branch=self.request.get('branch')
@@ -298,5 +333,6 @@ def upload_post(title,content,link,id):
         article.put()
 #('/signup',Rec),('/sigd',Sigd)
 app = webapp2.WSGIApplication([
-                                  ('/', homepage),('/plot',plotscatter),('/suggest',google_suggestion),('/sendmail',sendmail),('/addmessage',addmessageclass),('/version',install_version),('/crithogamev2',crithothegame),('/screenshot',screenshot),('/download',downloadclass),('/article',articlepage),('/articles',listpage),('/admin',admin),('/geturl',geturl),('/gate2018/',gate2018),('/gate2018',gate2018),('/gate2018logmark/',gate2018logmarks),('/admin_edit',admin_edit),('/dsu/',dsu_main)],
+                                  ('/', homepage)
+                                  ,('/plot',plotscatter),('/suggest',google_suggestion),('/sendmail',sendmail),('/addmessage',addmessageclass),('/version',install_version),('/crithogamev2',crithothegame),('/screenshot',screenshot),('/pointer',pointerclass),('/pointerapi',pointerapiclass),('/download',downloadclass),('/article',articlepage),('/articles',listpage),('/admin',admin),('/geturl',geturl),('/gate2018/',gate2018),('/gate2018',gate2018),('/gate2018logmark/',gate2018logmarks),('/admin_edit',admin_edit),('/dsu/',dsu_main)],
                               debug=True)
